@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="icon" type="image/png" href="image (1).ico" />
+
+	<title>Bellissimmo</title>
+</head>
+
+<script>
+    let a
+    if (navigator.userAgent.match(/Android/i) ||
+      navigator.userAgent.match(/webOS/i) ||
+      navigator.userAgent.match(/iPhone/i) ||
+      navigator.userAgent.match(/iPad/i) ||
+      navigator.userAgent.match(/iPod/i) ||
+      navigator.userAgent.match(/BlackBerry/i) ||
+      navigator.userAgent.match(/Windows Phone/i)) {
+      a = true;
+    } else {
+      a = false;
+    }
+    if(a==true){
+      // window.alert("Not optimised for mobile devices yet, but hey good things take time and patience is key")
+      window.location.assign("mobileEntry.html")
+      // window.close()
+    }
+  </script>
+  
+<body>
+    <div class="bg-contact2" style="background-image: url('images/bg-01.jpg');">
+		<div class="container-contact2">
+			<div class="wrap-contact2">
+				<form class="contact2-form validate-form">
+					<span class="contact2-form-title">
+						One Last Step 
+					</span>
+
+					<div class="wrap-input2 validate-input" data-validate="Name is required">
+						<input class="input2" type="text" name="name">
+						<span class="focus-input2" data-placeholder="NAME"></span>
+					</div>
+
+					<div class="wrap-input2 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input2" type="text" name="email">
+						<span class="focus-input2" data-placeholder="PHONE"></span>
+					</div>
+					<p>NOTE: Any further information will be share to you via the above phone number you provide. For a faster and convenient checkout do consider creating an account. Thank You for shopping with Bellissimmo :) </p>
+
+					
+
+					<div class="container-contact2-form-btn">
+						<div class="wrap-contact2-form-btn">
+							<div class="contact2-form-bgbtn"></div>
+							<button class="contact2-form-btn" onclick="place()">
+								PLACE ORDER
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

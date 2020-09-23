@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <link rel="stylesheet" type="text/css" href="cart.css" />
+  <link rel="icon" type="image/png" href="image (1).ico" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Calibri">
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster"> -->
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Philosopher"> -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Philosopher">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="navbar.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="loader.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="checkOut_cart.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js%22%3E"></script>
+
+
+  <script src="jquery.easeScroll.js"></script>
+
+
+
+  <title>Bellissimmo</title>
+
+  <style>
+    /* ------------------------- */
+    .dropbtnE {
+      background-color: #3498DB;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      z-index: 5000;
+
+    }
+
+    .dropbtnE:hover,
+    .dropbtnE:focus {
+      background-color: #2980B9;
+    }
+
+    .dropdownE {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-contentE {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      overflow: auto;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 999999999999999;
+    }
+
+    .dropdown-contentE a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      z-index: 999999999;
+    }
+
+    .dropdownE a:hover {
+      background-color: #ddd;
+    }
+
+    .showE {
+      display: block;
+    }
+
+    /* ------------------------ */
+    @media (min-width: 900px) {
+      .grid-item {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .grid-item {
+      display: inline-grid;
+      grid-template-columns: 1fr 1fr 0.2fr 1.4fr 1fr;
+      background-color: white;
+      border-bottom: 2px solid grey;
+      align-items: center;
+      padding: 10px;
+      padding-right: 20px;
+      padding-left: 20px;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      grid-column-gap: 50px;
+    }
+
+
+    /* Add animation to "page content" */
+    .homePage {
+      position: relative;
+      -webkit-animation-name: animatebottom;
+      -webkit-animation-duration: 1s;
+      animation-name: animatebottom;
+      animation-duration: 1s;
+    }
+
+    .grid-item {
+      position: relative;
+      -webkit-animation-name: animatebottom;
+      -webkit-animation-duration: 1s;
+      animation-name: animatebottom;
+      animation-duration: 1s;
+    }
+
+    @-webkit-keyframes animatebottom {
+      from {
+        bottom: -100px;
+        opacity: 0;
+      }
+
+      to {
+        bottom: 0px;
+        opacity: 1;
+      }
+    }
+
+    @keyframes animatebottom {
+      from {
+        bottom: -100px;
+        opacity: 0;
+      }
+
+      to {
+        bottom: 0;
+        opacity: 1;
+      }
+    }
+
+    .ckout {
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      border-radius: 20px;
+
+    }
+
+    .button_1 {
+      transition: transform .5s;
+      background-color: black;
+      /* Green */
+      border: none;
+      border-radius: 12px;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      padding: 14px 60px;
+    }
+
+    .button_2 {
+      transition: transform .5s;
+      background-color: rgb(92, 92, 92);
+      /* Green */
+      border: none;
+      border-radius: 12px;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      padding: 14px 69px;
+    }
+
+    .zoom {
+
+      transition: transform .5s;
+
+    }
+
+    .zoom:hover {
+      -ms-transform: scale(1.1);
+      /* IE 9 */
+      -webkit-transform: scale(1.1);
+      /* Safari 3-8 */
+      transform: scale(1.1);
+    }
+
+    .button_1:hover {
+      -ms-transform: scale(1.1);
+      /* IE 9 */
+      -webkit-transform: scale(1.1);
+      /* Safari 3-8 */
+      transform: scale(1.1);
+    }
+
+    .button_2:hover {
+      -ms-transform: scale(1.1);
+      /* IE 9 */
+      -webkit-transform: scale(1.1);
+      /* Safari 3-8 */
+      transform: scale(1.1);
+    }
+
+
+
+    /* ----------------------------checkOut Css-------------------------- */
+
+    table,
+    td,
+    th {
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+
+    table {
+      width: 97%;
+    }
+
+
+    th,
+    td {
+      padding: 15px;
+    }
+
+    .chk-button {
+
+      transition: transform .5s;
+
+      border: none;
+      color: white;
+      padding: 15px 48px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      background-color: orangered;
+    }
+
+    .chk-button:hover {
+      -ms-transform: scale(1.1);
+      /* IE 9 */
+      -webkit-transform: scale(1.1);
+      /* Safari 3-8 */
+      transform: scale(1.1);
+    }
+
+
+    /* ------------------------dropdown css------------------------ */
+
+
+    .ptp {
+      /* border: 3px solid #8AC007; */
+      /* padding: 95px; */
+      bottom: 90px;
+
+    }
+
+    #messageAdd {
+
+      background-color: greenyellow;
+
+      position: fixed;
+      ;
+      left: 35%;
+      top: 90%;
+      width: 400px;
+      border-radius: 20px;
+      align-content: center;
+      text-align: center;
+
+      z-index: 1;
+    }
+
+    #messageRemove {
+
+      background-color: greenyellow;
+
+      position: fixed;
+      ;
+      left: 35%;
+      top: 90%;
+      width: 400px;
+      border-radius: 20px;
+      align-content: center;
+      text-align: center;
+
+      z-index: 1;
+    }
+
+    /* --------------------------------------------------------------------- */
+
+    .info {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      z-index: -1;
+    }
+
+    a {
+      color: beige;
+    }
+
+    .w {
+      margin: 0 auto;
+      white-space: nowrap;
+      max-width: 1200px;
+      width: 100%;
+      height: 620px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow: hidden;
+      background: rgba(66, 66, 66, .5) url('https://cdn.boatinternational.com/bi_prd/bi/library_images/eldtbqfDQE6GJG1vgAAx_sailing-watches-hero.jpg') repeat fixed;
+      background-position: 50% 100%;
+      background-size: cover;
+      position: relative;
+
+      font-size: 0;
+    }
+
+    .i {
+      width: 40px;
+      height: 100%;
+      display: inline-block;
+      position: relative;
+      z-index: 4;
+      padding: 2px;
+      transition: all 1.3s ease-in-out;
+      background: rgba(66, 66, 66, .5) url(homePageModel.jpg) repeat fixed;
+      background-size: cover;
+
+      background-position: 50% 100%;
+
+      border-radius: 0%;
+    }
+
+    .i:hover {
+      transition: all 0s linear;
+      opacity: 0;
+    }
+
+    .h {
+      display: block;
+      position: absolute;
+      z-index: 2;
+      width: 100%;
+      text-align: center;
+      top: 150px;
+      font-size: 40px;
+      color: rgba(245, 245, 220, 1);
+      text-shadow: 0 5px 17px rgba(87, 87, 80, 0.85);
+    }
+
+    #arrow {
+      position: relative;
+      width: 50px;
+      left: 50%;
+      top: 35%;
+      z-index: 19;
+
+    }
+
+    #shadow {
+      position: relative;
+      height: 100px;
+      left: 0%;
+      top: 31%;
+      z-index: 10;
+    }
+
+    #homePage {
+      background: #000000;
+      font-family: "Open Sans", Helvetica, Arial, sans-serif;
+      color: #fff;
+      padding: 0;
+      margin-top: -100px;
+      margin-right: 0;
+      margin-left: 0;
+      height: 2000px;
+    }
+
+    .hometd {
+
+      padding: 0px;
+      text-align: center;
+    }
+
+    #section2 {
+      height: 135%;
+      width: 100%;
+      align-self: center;
+      opacity: 1;
+      background-image: url("https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero-00e10b1f.jpg");
+      background-size: cover;
+
+    }
+
+    .glow {
+      font-size: 80px;
+      color: #fff;
+      text-align: center;
+      -webkit-animation: glow 1s ease-in-out infinite alternate;
+      -moz-animation: glow 1s ease-in-out infinite alternate;
+      animation: glow 1s ease-in-out infinite alternate;
+    }
+
+    @-webkit-keyframes glow {
+      from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #3b3b3b, 0 0 40px #3a3a3a, 0 0 50px #020202, 0 0 60px #1a1919, 0 0 70px #0c0b0c;
+      }
+
+      to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #dadada, 0 0 40px #cecece, 0 0 50px #cacaca, 0 0 60px #505050, 0 0 70px #858585, 0 0 80px #353535;
+      }
+    }
+
+    .homeTable,
+    .homeTableData {
+      border: none;
+    }
+
+    .snip1543 {
+      padding: 0;
+    }
+
+    @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+    @import url(https://fonts.googleapis.com/css?family=Philosopher:700);
+
+    .snip1543 {
+      background-color: #fff;
+      color: #ffffff;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 16px;
+      margin: 10px;
+      max-width: 560px;
+      min-width: 560px;
+      overflow: hidden;
+      position: relative;
+      text-align: left;
+      width: 100%;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+
+    .snip1543 *,
+    .snip1543 *:before,
+    .snip1543 *:after {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-transition: all 0.45s ease;
+      transition: all 0.45s ease;
+    }
+
+    .snip1543 img {
+      backface-visibility: hidden;
+      max-width: 100%;
+      vertical-align: top;
+    }
+
+    .snip1543:before,
+    .snip1543:after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      content: '';
+      background-color: #fd5e5ede;
+      opacity: 0.5;
+      -webkit-transition: all 0.45s ease;
+      transition: all 0.45s ease;
+    }
+
+    .snip1543:before {
+      -webkit-transform: skew(30deg) translateX(-80%);
+      transform: skew(30deg) translateX(-80%);
+    }
+
+    .snip1543:after {
+      -webkit-transform: skew(-30deg) translateX(-70%);
+      transform: skew(-30deg) translateX(-70%);
+    }
+
+    .snip1543 figcaption {
+      position: absolute;
+      top: 0px;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      z-index: 1;
+      bottom: 0;
+      padding: 25px 40% 25px 20px;
+    }
+
+    .snip1543 figcaption:before,
+    .snip1543 figcaption:after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #ff9494ee;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+      content: '';
+      opacity: 0.5;
+      z-index: -1;
+    }
+
+    .snip1543 figcaption:before {
+      -webkit-transform: skew(30deg) translateX(-100%);
+      transform: skew(30deg) translateX(-100%);
+    }
+
+    .snip1543 figcaption:after {
+      -webkit-transform: skew(-30deg) translateX(-90%);
+      transform: skew(-30deg) translateX(-90%);
+    }
+
+    .snip1543 h3,
+    .snip1543 p {
+      margin: 0;
+      opacity: 0;
+      letter-spacing: 1px;
+    }
+
+    .snip1543 h3,
+    .snip1543 p {
+      color: black;
+      font-family: 'Philosopher';
+      font-size: 45px;
+      font-weight: 700;
+      line-height: 1em;
+
+    }
+
+    .snip1543 p {
+      font-size: 0.9em;
+    }
+
+    .snip1543 a {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+    }
+
+    .snip1543:hover h3,
+    .snip1543.hover h3,
+    .snip1543:hover p,
+    .snip1543.hover p {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 0.9;
+      -webkit-transition-delay: 0.2s;
+      transition-delay: 0.2s;
+    }
+
+    .snip1543:hover:before,
+    .snip1543.hover:before {
+      -webkit-transform: skew(30deg) translateX(-20%);
+      transform: skew(30deg) translateX(-20%);
+      -webkit-transition-delay: 0.05s;
+      transition-delay: 0.05s;
+    }
+
+    .snip1543:hover:after,
+    .snip1543.hover:after {
+      -webkit-transform: skew(-30deg) translateX(-10%);
+      transform: skew(-30deg) translateX(-10%);
+    }
+
+    .snip1543:hover figcaption:before,
+    .snip1543.hover figcaption:before {
+      -webkit-transform: skew(30deg) translateX(-40%);
+      transform: skew(30deg) translateX(-40%);
+      -webkit-transition-delay: 0.15s;
+      transition-delay: 0.15s;
+    }
+
+    .snip1543:hover figcaption:after,
+    .snip1543.hover figcaption:after {
+      -webkit-transform: skew(-30deg) translateX(-30%);
+      transform: skew(-30deg) translateX(-30%);
+      -webkit-transition-delay: 0.1s;
+      transition-delay: 0.1s;
+    }
+
+    .Philosopher,
+    p {
+      font-family: "Philosopher";
+    }
+
+    h4 {
+      padding-left: 2.4%;
+      font-size: 70px;
+      color: black;
+      font-family: "Philosopher";
+    }
+
+    .zoom-img {
+
+      transition: transform .6s;
+
+
+    }
+
+    .zoom-img:hover {
+      -ms-transform: scale(1.02);
+      /* IE 9 */
+      -webkit-transform: scale(1.02);
+      /* Safari 3-8 */
+      transform: scale(1.02);
+
+
+    }
+
+    /* =============================DROPDOWN++++++++++++++++++++++++++++ */
+    .dropdown {
+      float: left;
+      overflow: hidden;
+    }
+
+    .dropdown .dropbtn {
+      font-size: 14px;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 14px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+    }
+
+    .navbar a:hover,
+    .dropdown:hover .dropbtn {
+      background-color: grey;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: fixed;
+      background-color: #818181;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+
+    }
+
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* -------------------size selection CSS---------------- */
+    .size {
+      color: #000000;
+      text-align: center;
+      
+    }
+    .custom-select {
+
+      color: white;
+      text-align: center;
+      
+    }
+
+    .zoom {
+
+      transition: transform .5s;
+
+    }
+
+    .zoom:hover {
+      -ms-transform: scale(1.1);
+      /* IE 9 */
+      -webkit-transform: scale(1.1);
+      /* Safari 3-8 */
+      transform: scale(1.1);
+    }
+
+    #logo {
+      cursor: pointer;
+    }
+   
+    
+    a {
+     
+     cursor: pointer;
+   }
+
+    .footer {
+      position: relative;
+      bottom: -10%;
+      width: 100%;
+      height: 14%;
+      background-color: black;
+      color: white;
+      text-align: center;
+      z-index: 40;
+    }
+    .site-footer
+{
+  background-color:#26272b;
+  padding:45px 0 20px;
+  font-size:15px;
+  line-height:24px;
+  color:#737373;
+}
+.site-footer hr
+{
+  border-top-color:#bbb;
+  opacity:0.5
+}
+.site-footer hr.small
+{
+  margin:20px 0
+}
+.site-footer h6
+{
+  color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+.site-footer a
+{
+  color:#737373;
+}
+.site-footer a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+.footer-links li
+{
+  display:block
+}
+.footer-links a
+{
+  color:#737373
+}
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links.inline li
+{
+  display:inline-block
+}
+.site-footer .social-icons
+{
+  text-align:right
+}
+.site-footer .social-icons a
+{
+  width:40px;
+  height:40px;
+  line-height:40px;
+  margin-left:6px;
+  margin-right:0;
+  border-radius:100%;
+  background-color:#33353d
+}
+.copyright-text
+{
+  margin:0
+}
+@media (max-width:991px)
+{
+  .site-footer [class^=col-]
+  {
+    margin-bottom:30px
+  }
+}
+@media (max-width:767px)
+{
+  .site-footer
+  {
+    padding-bottom:0
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center
+  }
+}
+.social-icons
+{
+  padding-left:0;
+  margin-bottom:0;
+  list-style:none
+}
+.social-icons li
+{
+  display:inline-block;
+  margin-bottom:4px
+}
+.social-icons li.title
+{
+  margin-right:15px;
+  text-transform:uppercase;
+  color:#96a2b2;
+  font-weight:700;
+  font-size:13px
+}
+.social-icons a{
+  background-color:#eceeef;
+  color:#818a91;
+  font-size:16px;
+  display:inline-block;
+  line-height:44px;
+  width:44px;
+  height:44px;
+  text-align:center;
+  margin-right:8px;
+  border-radius:100%;
+  -webkit-transition:all .2s linear;
+  -o-transition:all .2s linear;
+  transition:all .2s linear
+}
+.social-icons a:active,.social-icons a:focus,.social-icons a:hover
+{
+  color:#fff;
+  background-color:#29aafe
+}
+.social-icons.size-sm a
+{
+  line-height:34px;
+  height:34px;
+  width:34px;
+  font-size:14px
+}
+.social-icons a.facebook:hover
+{
+  background-color:#3b5998
+}
+.social-icons a.twitter:hover
+{
+  background-color:#00aced
+}
+.social-icons a.linkedin:hover
+{
+  background-color:#007bb6
+}
+.social-icons a.dribbble:hover
+{
+  background-color:#ea4c89
+}
+@media (max-width:767px)
+{
+  .social-icons li.title
+  {
+    display:block;
+    margin-right:0;
+    font-weight:600
+  }
+}
+
+    /* ======================================================= */
+    html {
+      --scrollbarBG: #000000;
+      --thumbBG: #90A4AE;
+    }
+
+    body::-webkit-scrollbar {
+      width: 11px;
+    }
+
+    body {
+      scrollbar-width: thin;
+      scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+    }
+
+    body::-webkit-scrollbar-track {
+      background: var(--scrollbarBG);
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background-color: var(--thumbBG);
+      border-radius: 6px;
+      height: 60px;
+      border: 3px solid var(--scrollbarBG);
+    }
+
+
+    /* --------------------------------------------------------------------- */
+  </style>
+</head>
+<script>
+  let a
+  if (navigator.userAgent.match(/Android/i) ||
+    navigator.userAgent.match(/webOS/i) ||
+    navigator.userAgent.match(/iPhone/i) ||
+    navigator.userAgent.match(/iPad/i) ||
+    navigator.userAgent.match(/iPod/i) ||
+    navigator.userAgent.match(/BlackBerry/i) ||
+    navigator.userAgent.match(/Windows Phone/i)) {
+    a = true;
+  } else {
+    a = false;
+  }
+  if(a==true){
+    // window.alert("Not optimised for mobile devices yet, but hey good things take time and patience is key")
+    window.location.assign("mobileEntry.html")
+    // window.close()
+  }
+</script>
+<body>
+
+<!---------------------------------- nav bar html--------------------------- -->
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content" id="overlay-content">
+    <table id="table">
+      <tr>
+        <th id="table" style="color:white">S/N</th>
+        <th id="table" style="color:white">Image</th>
+        <th id="table" style="color:white">Name</th>
+        <th id="table" style="color:white">Price</th>
+        <th id="table" style="color:white">Quantity</th>
+        <th id="table" style="color:white">Size - UK/India</th>
+        <th id="table" style="color:white">Sub Total</th>
+
+      </tr>
+    </table>
+    <br><br>
+    <div style="color:white" id="chkPrice">WOTCHA DOINN?? Why is the CART empty?</div>
+
+  </div>
+  <div class="ptp">
+    <!-- <h1><strong>HELLO</strong></h1> -->
+    <div class="checkout-text">
+      <span class="span-text"><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Order for a friend??</i> &nbsp;&nbsp;</span>
+      <span><input type="checkbox" id="cbox" name="vehicle2" value="cbox"></span><br><br>
+      <button class="chk-button" onclick="finalPage()">Proceed to pay</button>
+
+
+
+
+
+    </div>
+
+  </div>
+
+
+</div>
+
+
+<div class="topnav">
+
+
+  <div class="dropdown">
+
+    <div id="logo" onclick="homerender()" style="padding: 4px;padding-right:2px;"><img src="imagec.png"
+        style="height:40px;"></div>
+  </div>
+  <a onclick="homerender()">HOME</a>
+
+  <div class="dropdown">
+
+    <button class="dropbtn">MEN
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#menTshirts" onclick="menTeesRender()" class="ckout">MenTees</a>
+      <a href="#menJackets" onclick="menJacketsRender()" class="ckout">MenJackets</a>
+      <a href="#menShoes" onclick="menShoesRender()" class="ckout">MenShoes</a>
+      <a href="#menWatches" onclick="menWatchesRender()" class="ckout">MenWatches</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">WOMEN
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#womenTshirt" onclick="womenTeesRender()" class="ckout">WomenTees</a>
+      <a href="#womenJackets" onclick="womenJacketsRender()" class="ckout">WomenJackets</a>
+      <a href="#womenShoes" onclick="womenShoesRender()" class="ckout">WomenShoes</a>
+      <a href="#womenWatches" onclick="womenWatchesRender()" class="ckout">WomenWatches</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">ACCESSORIES
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#perfumes" onclick="perfumesRender()" class="ckout">Perfumes</a>
+      <a href="#sunglasses" onclick="sunglassesRender()" class="ckout">Sunglasses</a>
+    </div>
+  </div>
+
+  <a href="#Summary" onclick="openNav()" class="ckout">SUMMARY</a>
+  <a href="#" class="ckout" id="Ne"></a>
+  <!-- <a href="#Summary" id="logOut" onclick="logout()" class="ckout" >Log Out</a> -->
+
+
+
+</div>
+<button type="button" id="logOut" onclick="logout()" class="ckout zoom"
+  style="z-index: 50;right:6%;top:1.7%; position:fixed;display:block;"><i class="fas fa-user-circle"></i>&nbsp;
+  LOGOUT</button>
+<script>
+  if (sessionStorage.getItem("sess") != "1") {
+    window.alert("Login to view the page")
+    window.location.assign("index.html")
+  }
+</script>
+
+<script>
+  /* When the user clicks on the button, 
+  toggle between hiding and showing the dropdown content */
+  function myFunction() {
+    document.getElementById("myDropdownE").classList.toggle("show");
+  }
+
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function (event) {
+    if (!event.target.matches('.dropbtnE')) {
+      var dropdowns = document.getElementsByClassName("dropdown-contentE");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('showE')) {
+          openDropdown.classList.remove('showE');
+        }
+      }
+    }
+  }
+</script>
+<div id="shift"></div>
+
+<!-- ----------------------------------------------------------------------------- -->
+
+
+
+<div id="elements" class="scroll">
+
+
+  <!-- NEW -->
+  <div id="homePage" style="margin-top:-15%;">
+
+    <div id="arrow">
+      <a href="#section2" id="text"><i class="fa fa-angle-double-down glow" style="font-size:36px;"></i></a>
+    </div>
+    <div id="shadow" style="box-shadow: inset 5px -30px 18px #000000b7;"></div>
+
+    <div class="w" id="sec1">
+      <div class="i"></div>
+      <div class="i"></div>
+      <div class="i"></div>
+      <div class="i"></div>
+      <div class="i"></div>
+      <div class="i"></div>
+      <div class="i"></div>
+      <div class="i"></div>
+      <div class="i"></div>
+      <div class="i"></div>
+      <div class="i"></div>
+      <div class="i"></div>
+      <div class="i"></div>
+      <div class="i"></div>
+      <div class="i"></div>
+      <div class="i"></div>
+      <div class="i"></div>
+      <div class="i"></div>
+      <div class="i"></div>
+      <div class="i"></div>
+      <div class="i"></div>
+      <div class="i"></div>
+      <div class="i"></div>
+      <div class="i"></div>
+      <div class="i"></div>
+      <div class="i"></div>
+      <div class="i"></div>
+      <div class="i"></div>
+      <div class="i"></div>
+      <div class="i"></div>
+      <div class="i"></div>
+      <div class="i"></div>
+      <div class="i"></div>
+
+
+
+    </div>
+
+    <div id="section2">
+
+      <div id="cat-1">
+
+        <h4 style="padding-top:10px;margin:0px;"><b>T-Shirts</b></h4>
+        <table class="homeTable" style="width:100%">
+
+          <tr>
+            <td class="homeTableData">
+              <figure class="snip1543 zoom-img"
+                style="box-shadow:0 10px 16px 0 rgba(0, 0, 0, 0.74),0 6px 20px 0 rgba(0, 0, 0, 0.363);border-radius:2%;">
+                <img width="560px" height="315px"
+                  src="https://images.unsplash.com/photo-1516178151140-1a27a08c417a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80"
+                  alt="sample108" />
+                <figcaption>
+                  <h3 class="Philosopher">MEN</h3>
+                  <br>
+
+                  <p style="font-size: 20px;color:black;">Go casual the modish way with our exhaustive
+                    fleet of T-shirts for men, that encompasses stylish polo neck tees, classic slim fit crews and a
+                    whole lot more! We’re showcasing the season’s favourites with a ramp full of brands like Adidas,
+                    Nike and Puma.</p>
+
+                </figcaption>
+                <a href="#menTshirts" onclick="menTeesRender()"></a>
+              </figure>
+            </td>
+
+
+            <td class="homeTableData">
+              <figure class="snip1543 zoom-img"
+                style="box-shadow:0 10px 16px 0 rgba(0, 0, 0, 0.74),0 6px 20px 0 rgba(0, 0, 0, 0.363);border-radius:2%;">
+                <img width="560px" height="315px" src="womenTshirt.PNG" alt="sample108" />
+                <figcaption>
+                  <h3 class="Philosopher">WOMEN</h3>
+                  <br>
+
+                  <p style="font-size: 22px; color:rgb(0, 0, 0);">Funk up your style with our fashionable
+                    selection of tees! Bellssimmo showcases stunning styles from vivid graphic prints to versatile
+                    geometric art, subtle florals to simple solid tees from top brands
+                    like Adidas, Nike and Puma.</p>
+
+                </figcaption>
+                <a href="#womenTshirts" onclick="womenTeesRender()"></a>
+              </figure>
+            </td>
+          </tr>
+        </table>
+
+      </div>
+      <hr>
+      <div id="cat-1">
+
+        <h4 style="padding-top:0px;margin:0px;"><b>Jackets</b></h4>
+        <table class="homeTable" style="width:100%;" id="hometable">
+
+          <tr>
+            <td class="homeTableData">
+              <figure class="snip1543 zoom-img"
+                style="box-shadow:0 10px 16px 0 rgba(0, 0, 0, 0.74),0 6px 20px 0 rgba(0, 0, 0, 0.363);border-radius:2%;">
+                <img width="560px" height="315px" src="menJacket.PNG" alt="sample108" />
+                <figcaption>
+                  <h3 class="Philosopher">MEN</h3>
+                  <br>
+
+                  <p style="font-size: 20px;color:black;">Transform your winter wardrobe with the addition
+                    of some swanky jackets from our collection! From puffer, varsity, quilted to bomber jackets, we host
+                    the full package. Shop men's jackets from top-selling brands in the fashion scene at best prices &
+                    offers. </p>
+
+                </figcaption>
+                <a href="#menJackets" onclick="menJacketsRender()"></a>
+              </figure>
+            </td>
+
+
+            <td class="homeTableData">
+              <figure class="snip1543 zoom-img"
+                style="box-shadow:0 10px 16px 0 rgba(0, 0, 0, 0.74),0 6px 20px 0 rgba(0, 0, 0, 0.363);border-radius:2%;">
+                <img width="560px" height="315px" src="womenJacket.PNG" alt="sample108" />
+                <figcaption>
+                  <h3 class="Philosopher">WOMEN</h3>
+                  <br>
+
+                  <p style="font-size: 20px; color:black;">From morning workouts to evening soiree, we are
+                    here to meet your fashion needs with our collection of coats and jackets for women. From fierce
+                    sports jackets to stunning designs that surprise us, Bellissimmo has it all for a dramatic fashion
+                    statement.</p>
+
+                </figcaption>
+                <a href="#womenJackets" onclick="womenJacketsRender()"></a>
+              </figure>
+            </td>
+          </tr>
+        </table>
+
+      </div>
+      <hr>
+      <div id="cat-1">
+
+        <h4 style="padding-top:0px;margin:0px;"><b>Shoes</b></h4>
+        <table class="homeTable" style="width:100%">
+
+          <tr>
+            <td class="homeTableData">
+              <figure class="snip1543 zoom-img"
+                style="box-shadow:0 10px 16px 0 rgba(0, 0, 0, 0.74),0 6px 20px 0 rgba(0, 0, 0, 0.363);border-radius:2%;">
+                <img width="560px" height="315px" src="menShoes.PNG" alt="sample108" />
+                <figcaption>
+                  <h3 class="Philosopher">MEN</h3>
+                  <br>
+
+                  <p style="font-size: 20px;color:black;">If you’re going to put your body through any
+                    type of strenuous physical activity, it’s important that you wear comfortable footwear. Buy latest
+                    collections of sports shoes online on Bellissimmo at best prices from the top brands. </p>
+
+                </figcaption>
+                <a href="#menShoes" onclick="menShoesRender()"></a>
+              </figure>
+            </td>
+
+
+            <td class="homeTableData">
+              <figure class="snip1543 zoom-img"
+                style="box-shadow:0 10px 16px 0 rgba(0, 0, 0, 0.74),0 6px 20px 0 rgba(0, 0, 0, 0.363);border-radius:2%;">
+                <img width="560px" height="315px" src="womenShoes.PNG" alt="sample108" />
+                <figcaption>
+                  <h3 class="Philosopher">WOMEN</h3>
+                  <br>
+
+                  <p style="font-size: 20px;color:black;"> Women’s love for shoes is not a hidden story
+                    anymore. They can have as many pairs of shoes as the number of days in a year and still crave for
+                    more. With Bellissimmo, a women can find the best match. </p>
+
+                </figcaption>
+                <a href="#womenShoes" onclick="womenShoesRender()"></a>
+              </figure>
+            </td>
+          </tr>
+        </table>
+
+      </div>
+      <hr>
+      <div id="cat-1">
+
+        <h4 style="padding-top:0px;margin:0px;"><b>Watches</b></h4>
+        <table class="homeTable" style="width:100%">
+
+          <tr>
+            <td class="homeTableData">
+              <figure class="snip1543 zoom-img"
+                style="box-shadow:0 10px 16px 0 rgba(0, 0, 0, 0.74),0 6px 20px 0 rgba(0, 0, 0, 0.363);border-radius:2%;">
+                <img width="560px" height="315px" src="menWatch.PNG" alt="sample108" />
+                <figcaption>
+                  <h3 class="Philosopher">MEN</h3>
+                  <br>
+
+                  <p style="font-size: 20px;color:black;">Shop for men’s watches online from Flipkart from
+                    the biggest names in the country including Fossil, Sonata, Titan, Maxima among dozens of other
+                    names. A good wrist watch can go a long way when you’re trying to make an impression! </p>
+
+                </figcaption>
+                <a href="#menWatches" onclick="menWatchesRender()" class="ckout"></a>
+              </figure>
+            </td>
+
+
+            <td class="homeTableData">
+              <figure class="snip1543 zoom-img"
+                style="box-shadow:0 10px 16px 0 rgba(0, 0, 0, 0.74),0 6px 20px 0 rgba(0, 0, 0, 0.363);border-radius:2%;">
+                <img width="560px" height="315px" src="womenWatch.PNG" alt="sample108" />
+                <figcaption>
+                  <h3 class="Philosopher">WOMEN</h3>
+                  <br>
+
+                  <p style="font-size: 20px;color:black;">Ladies’ watches are a range of very classy
+                    accessories that can accentuate the style and appearance of a lady. No matter what kind of outfit
+                    she is wearing, you can always find a matching women’s watch at Bellissimmo. </p>
+
+                </figcaption>
+                <a href="#womenWatches" onclick="womenWatchesRender()"></a>
+              </figure>
+            </td>
+          </tr>
+        </table>
+
+      </div>
+      <hr>
+      <div id="cat-1">
+
+        <h4 style="padding-top:0px;margin:0px;"><b>Perfumes & Sunglasses</b></h4>
+        <table class="homeTable" style="width:100%">
+
+          <tr>
+            <td class="homeTableData">
+              <figure class="snip1543 zoom-img"
+                style="box-shadow:0 10px 16px 0 rgba(0, 0, 0, 0.74),0 6px 20px 0 rgba(0, 0, 0, 0.363);border-radius:2%;">
+                <img width="560px" height="315px" src="perfume.PNG" alt="sample108" />
+                <figcaption>
+                  <h3 class="Philosopher">PERFUMES</h3>
+                  <br>
+
+                  <p style="font-size: 20px;color:black;">Everyone strives to look presentable and at
+                    their best at all times.Use deodorants and fragrances to keep body odor at bay and smell fresh all
+                    day. Buy the best grooming products from your favorite online shopping site at attractive prices.
+                  </p>
+
+                </figcaption>
+                <a href="#perfumes" onclick="perfumesRender()"></a>
+              </figure>
+            </td>
+
+
+            <td class="homeTableData">
+              <figure class="snip1543 zoom-img"
+                style="box-shadow:0 10px 16px 0 rgba(0, 0, 0, 0.74),0 6px 20px 0 rgba(0, 0, 0, 0.363);border-radius:2%;">
+                <img width="560px" height="315px" src="sunglass.PNG" alt="sample108" />
+                <figcaption>
+                  <h3 class="Philosopher">SUNGLASSES </h3>
+                  <br>
+
+                  <p style="font-size: 20px;color:black;">The right pair of shades will instantly upgrade
+                    your look and will make you look stylish. From aviators and wayfarers to cat-eye glasses, you can
+                    buy various types of sunnies from Bellissimmo at competitive prices. </p>
+
+
+
+
+                </figcaption>
+                <a href="#sunglasses" onclick="sunglassesRender()"></a>
+              </figure>
+            </td>
+          </tr>
+        </table>
+
+      </div>
+<!--======================================= footer=============================== -->
+      <div class="footer">
+        <a href="#" id="text"><i class="fa fa-angle-double-up glow" style="font-size:36px;"></i></a>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <h6>About</h6>
+              <p class="text-justify">Bellissimmo is the best of all online stores because of the  sheer convenience that it offers. You can view your favourite brands with price options for different products in one place. A user-friendly interface will guide you through your selection process. Comprehensive size charts, product information and high-resolution images help you make the best buying decisions. You also have the freedom to choose your payment options, be it card or cash-on-delivery.
+
+                Enjoy the hassle-free experience as you shop comfortably from your home or your workplace. You can also shop for your friends, family and loved-ones.</p>
+            </div>
+  
+            <div class="col-xs-6 col-md-3">
+              <h6>Categories</h6>
+              <ul class="footer-links">
+               <li><a href="#menTshirts" onclick="menTeesRender()" class="ckout">MenTees</a></li>
+               <li><a href="#menJackets" onclick="menJacketsRender()" class="ckout">MenJackets</a></li>
+               <li><a href="#menShoes" onclick="menShoesRender()" class="ckout">MenShoes</a></li>
+               <li><a href="#menWatches" onclick="menWatchesRender()" class="ckout">MenWatches</a></li>
+               <li><a href="#womenTshirt" onclick="womenTeesRender()" class="ckout">WomenTees</a></li>
+               <li><a href="#womenJackets" onclick="womenJacketsRender()" class="ckout">WomenJackets</a></li>
+               <li><a href="#womenShoes" onclick="womenShoesRender()" class="ckout">WomenShoes</a></li>
+               <li><a href="#womenWatches" onclick="womenWatchesRender()" class="ckout">WomenWatches</a></li>
+               <li><a href="#perfumes" onclick="perfumesRender()" class="ckout">Perfumes</a></li>
+               <li> <a href="#sunglasses" onclick="sunglassesRender()" class="ckout">Sunglasses</a></li>
+           
+              </ul>
+            </div>
+            
+  
+            <div class="col-xs-6 col-md-3">
+              <h6>Brands</h6>
+              <ul class="footer-links">
+               <li><a>Puma</a></li>
+               <li><a>Adidas</a></li>
+               <li><a>Nike</a></li>
+               <li><a>Sonata</a></li>
+               <li><a>Fossil</a></li>
+               <li><a>Reebok</a></li>
+               <li><a>Bentley</a></li>
+              </ul>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+              <!-- <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by 
+           <a href="#">Bellissimmo</a>. -->
+           <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <!-- <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li> -->
+
+              <li><a class="github" href="https://github.com/Wicked-North"><i class="fa fa-github"></i></a></li> 
+              <li><a class="linkedin" href="https://www.linkedin.com/in/sagnik-das-6aa2211b5/"><i class="fa fa-linkedin"></i></a>Sagnik Das</li>   
+            </ul>
+          </div>
+           </p>
+        </div>
+            
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <ul class="social-icons">
+                <!-- <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li> -->
+                <li><a class="github" href="https://github.com/Abhra-Ghosh#"><i class="fa fa-github"></i></a></li> 
+                <li><a class="linkedin" href="https://www.linkedin.com/in/abhra-ghosh-57840a1b7/"><i class="fa fa-linkedin"></i></a>Abhra Ghosh</li>   
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+<!--===================================== end footer=================================== -->
+
+    </div>
+
+  </div>
+
+
+</div>
+<div id="messageAdd" style="display:none;"><i class="fas fa-receipt"></i>PRODUCT ADDED TO CART!</div>
+<div id="messageRemove" style="display:none;"><i class="fas fa-receipt"></i>PRODUCT REMOVED FROM CART!</div>
+
+
+
+<!-- <input id="hamburger" class="hamburger" type="checkbox" /> -->
+<input id="hamburger" class="hamburger" type="checkbox" />
+<label class="hamburger" for="hamburger">
+  <div class="cartLogo zoom" style="z-index:9999999999;position:fixed;top:1.6%;right:2.4%;"><i
+      class="fa fa-shopping-cart" style="font-size:30px;color:white;"></i></div>
+  <div id="number"
+    style="text-align:center;vertical-align: middle;line-height: 15px; width:15px;height:15px;border-radius:50%;background-color: red;color:white;top:5%;position: fixed;z-index:9999999999;top:1.7%;right:2%;">
+    0</div>
+  <text>
+    <close style="color:white">CLOSE</close>
+    <open style="right:10%;opacity:0;">CART
+
+    </open>
+  </text>
+</label>
+<section class="drawer-list" style="z-index:50;">
+
+  <li>
+    <div style="color:white; padding-left: 50px;"><b> Click <span style="color:orangered"><i>SUMMARY</i></span> to proceed with the Payment</b></div>
+    <br>
+    <div id="cartTotal" style="color: white">
+      
+      <b><i>Cart is Empty</i></b>
+      
+    </div>
+  </li>
+
+
+  <ul id="cart_elements"></ul>
+
+</section>
+
+
+
+
+<script src="homepage.js"></script>
+
+<!------------------------------- nav bar script tags----------------------- -->
+<script>
+  function openNav() {
+    document.getElementById("myNav").style.height = "100%";
+  }
+
+  function closeNav() {
+    document.getElementById("myNav").style.height = "0%";
+  }
+</script>
+
+
+
+<!-- ------------------------------------------------------------------------- -->
+
+<!------------------------------- nav bar script tags----------------------- -->
+
+
+</body>
+
+</html>

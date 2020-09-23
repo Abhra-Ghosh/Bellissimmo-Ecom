@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title>Bellissimmo</title>
+	<link rel="icon" type="image/png" href="image (1).ico" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="main.css">
+<!--===============================================================================================-->
+<style>
+
+</style>
+</head>
+<script>
+    let a
+    if (navigator.userAgent.match(/Android/i) ||
+      navigator.userAgent.match(/webOS/i) ||
+      navigator.userAgent.match(/iPhone/i) ||
+      navigator.userAgent.match(/iPad/i) ||
+      navigator.userAgent.match(/iPod/i) ||
+      navigator.userAgent.match(/BlackBerry/i) ||
+      navigator.userAgent.match(/Windows Phone/i)) {
+      a = true;
+    } else {
+      a = false;
+    }
+    if(a==true){
+      // window.alert("Not optimised for mobile devices yet, but hey good things take time and patience is key")
+      window.location.assign("mobileEntry.html")
+      // window.close()
+    }
+  </script>
+  
+<body>
+
+	<div class="bg-contact2" style="background-image: url('images/bg-01.jpg');">
+		<div class="container-contact2">
+			<div class="wrap-contact2">
+				<form class="contact2-form validate-form" style="text-align: center;">
+					<div >
+						<img src="tick-trans.png" style="width:40%;"><br><br>
+						<h3  id="orderId"><br></h3>
+						<h3 class="days" ></h3><br></div>
+<div ><p  style="text-align:center; color:black; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Your order has been placed successfully. You will receive all the shipping details regarding this order in your email .Thank you for placing your order with Bellissimmo. </p></div>
+
+					<div class="container-contact2-form-btn">
+						<div class="wrap-contact2-form-btn">
+							<div class="contact2-form-bgbtn"></div>
+							<button class="contact2-form-btn" onclick="redirect()">
+								CONTINUE SHOPPING
+							</button>
+						</div>
+					</div>
+					<br>
+					<p style="color: black;">Note: Please click the above button for a secure redirection to the Bellissimmo homepage.</p>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+
+<!--===============================================================================================-->
+	<script>
+
+		var days=localStorage.getItem("days")
+
+		let r = Math.random().toString(26).substring(7).toUpperCase();
+		$("#orderId").text(`Order ID: ${r}`)
+
+
+		$(".days").text(`Delivery In: ${days} day(s)`)
+		function redirect(){
+			
+            localStorage.setItem("flag","1")
+			window.close()
+        	window.addEventListener("beforeunload", function (event) {
+            localStorage.setItem("flag","1")
+
+        })
+		}
+	</script>
+
+
+</body>
+</html>

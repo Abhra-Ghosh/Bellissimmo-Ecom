@@ -1,0 +1,404 @@
+<html>
+
+<head>
+  <title>Bellissimmo</title>
+  <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+  <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+  <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+  <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/png" href="image (1).ico" />
+  <style>
+    body {
+      /* overflow:hidden; */
+      font-family: Arial;
+      font-size: 17px;
+      padding: 8px;
+      background-image: url('https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero-00e10b1f.jpg');
+      width: 85%;
+      padding-left: 10%;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .row {
+      display: -ms-flexbox;
+      /* IE10 */
+      display: flex;
+      -ms-flex-wrap: wrap;
+      /* IE10 */
+      flex-wrap: wrap;
+      margin: 0 -12px;
+    }
+
+    .col-25 {
+      -ms-flex: 25%;
+      /* IE10 */
+      flex: 25%;
+    }
+
+    .col-50 {
+      -ms-flex: 50%;
+      /* IE10 */
+      flex: 50%;
+    }
+
+    .col-75 {
+      -ms-flex: 75%;
+      /* IE10 */
+      flex: 75%;
+
+    }
+
+    .col-25,
+    .col-50,
+    .col-75 {
+      padding: 16px;
+      left: 20%;
+
+    }
+
+    .container {
+      background-color: rgba(255, 218, 185, 0.541);
+      padding: 15px;
+      border: 1px solid lightgrey;
+      border-radius: 3px;
+      align-self: center;
+      box-shadow: 10px 10px 8px #000000;
+    }
+
+    input[type=text] {
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    label {
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .icon-container {
+      margin-bottom: 20px;
+      padding: 0;
+      font-size: 24px;
+    }
+
+    .btn {
+      position: relative;
+      background-color: #000000;
+      color: white;
+      padding: 12px;
+      margin: 0px;
+      border: none;
+      width: 100%;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 17px;
+    }
+
+    .btn:hover {
+      background-color: #000000;
+      transform: scale(1.02);
+      transition: transform .6s;
+    }
+
+    a {
+      color: #2196F3;
+    }
+
+    hr {
+      border: 1px solid lightgrey;
+    }
+
+    span.price {
+      float: right;
+      color: grey;
+    }
+
+    /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+    @media (max-width: 800px) {
+      .row {
+        flex-direction: column-reverse;
+      }
+
+      .col-25 {
+        margin-bottom: 20px;
+      }
+    }
+
+    /* LOADER --------------------------------------------------------------------- */
+    .loader,
+.loader:before,
+.loader:after {
+  background: black;
+  -webkit-animation: load1 1s infinite ease-in-out;
+  animation: load1 1s infinite ease-in-out;
+  width: 1em;
+  height: 4em;
+}
+.loader {
+  color: black;
+  text-indent: -9999em;
+  margin: 88px auto;
+  position: relative;
+  font-size: 11px;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+.loader:before,
+.loader:after {
+  position: absolute;
+  top: 0;
+  content: '';
+}
+.loader:before {
+  left: -1.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.loader:after {
+  left: 1.5em;
+}
+@-webkit-keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em;
+    height: 5em;
+  }
+}
+@keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em;
+    height: 5em;
+  }
+  
+}
+
+/* -===============-==========================BLUR EFF=-======================================= */
+.blur   {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+}
+#overlay    {
+    position: fixed;
+    display: none;
+    left: 0px;
+    top: 27%;
+    right: 0px;
+    bottom: 0px;
+    background: rgba(0, 0, 0);
+    z-index: 999;
+}
+#popup {
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    background: rgb(0, 0, 0);
+    border: 5px solid rgb(0, 0, 0);
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+}
+
+#logo{
+  
+  left:51%;
+  top:2.5%;
+}
+#messageAdd {
+
+background-color: rgba(159, 241, 37, 0);
+color:rgb(0, 0, 0);
+position: relative;
+left:5%;
+bottom: 9%;
+width: 400px;
+border-radius: 20px;
+align-content: center;
+text-align: center;
+
+z-index: 1;
+}
+#deliveryMessageAdd {
+
+background-color: rgba(159, 241, 37, 0);
+color:rgb(0, 0, 0);
+position: absolute;
+font-weight: bold;
+left: 65%;
+top: 45%;
+width: 400px;
+border-radius: 20px;
+align-content: center;
+text-align: center;
+
+z-index: 1;
+}
+#deliveryDistanceAdd{
+
+background-color: rgba(159, 241, 37, 0);
+color:rgb(0, 0, 0);
+position: absolute;
+font-weight: bold;
+left: 65%;
+top: 35%;
+width: 400px;
+border-radius: 20px;
+align-content: center;
+text-align: center;
+
+z-index: 1;
+
+}
+
+  </style>
+</head>
+
+<script>
+  let a
+  if (navigator.userAgent.match(/Android/i) ||
+    navigator.userAgent.match(/webOS/i) ||
+    navigator.userAgent.match(/iPhone/i) ||
+    navigator.userAgent.match(/iPad/i) ||
+    navigator.userAgent.match(/iPod/i) ||
+    navigator.userAgent.match(/BlackBerry/i) ||
+    navigator.userAgent.match(/Windows Phone/i)) {
+    a = true;
+  } else {
+    a = false;
+  }
+  if(a==true){
+    // window.alert("Not optimised for mobile devices yet, but hey good things take time and patience is key")
+    window.location.assign("mobileEntry.html")
+    // window.close()
+  }
+</script>
+
+<body>
+<div id="main_container">
+  <div class="row">
+    <div class="col-75">
+      <div class="container">
+
+     
+        <div id="deliveryMessageAdd" style="display:none;"></div>
+        <div id="deliveryDistanceAdd" style="display:none;"></div>
+        
+        <div class="row">
+          <div class="col-50">
+            <h3>Billing Address</h3>
+            <label for="fname"><i class="fa fa-user"></i>Guest ID</label>
+            <input type="text" id="fname" name="firstname"  disabled>
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="abc@xyz.com" >
+            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+            <label for="city"><i class="fa fa-institution"></i> City</label>
+            <input type="text" id="city" name="city" placeholder="Ex: Bangalore">
+
+            <div class="row">
+              <div class="col-50">
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" placeholder="Ex: Karnataka">
+              </div>
+              <div class="col-50">
+                <label for="zip">Zip</label>
+                <input type="text" id="zip" name="zip" placeholder="10001">
+              </div>
+            </div>
+          </div>
+          <div id="logo" style="position:absolute;">
+            <img src="logoPay.png"  style="width:60%">
+          </div> 
+          <div class="col-50">
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname" placeholder="Name on Card">
+            <label for="ccnum">Credit card number</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+            <label for="expmonth">Exp Month</label>
+            <input type="text" id="expmonth" name="expmonth" placeholder="Ex: October">
+            <div class="row">
+              <div class="col-50">
+                <label for="expyear">Exp Year</label>
+                <input type="text" id="expyear" name="expyear" placeholder="2018">
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="Ex: 352">
+              </div>
+            </div>
+          </div>
+        </div>
+        <label style>
+          <button type="button" class="btn" onclick="getMap()"
+          style="color:aliceblue;background-color: #000000;width:40%;height:7%;">CHECK
+          AVAILABILITY</button>
+          <span id="messageAdd" style="display:none;"><i class="fa fa-check" aria-hidden="true"></i>Available</span>
+        </label>
+        <button class="btn" onclick="placeOrder()">PLACE ORDER</button>
+
+      </div>
+    </div>
+    <div class="col-25">
+      <div class="container">
+
+
+        <p>GRAND TOTAL: <span class="price" style="color:black"><b></b></span></p>
+      </div>
+    </div>
+    <div id="map"></div>
+
+  </div>
+  
+    
+  
+</div>
+<div class="loader" id="overlay" style="opacity: 1; z-index: 99; display:none;">
+</div>
+<div id="writeup" style=" z-index: 100; top:50%; left:33%;position:fixed; display:none;"><p>Payment processing, please donot close this window</p></div>
+
+  <script src="map.js"></script>
+  <script>
+
+    document.getElementById("fname").defaultValue = "GUEST-85CH4573";
+    
+  
+  </script>
+  <script src="placeOrder.js"></script>
+</body>
+
+</html>

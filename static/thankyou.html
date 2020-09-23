@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="image (1).ico" />
+    <title>Bellissimmo</title>
+</head>
+<script>
+    let a
+    if (navigator.userAgent.match(/Android/i) ||
+      navigator.userAgent.match(/webOS/i) ||
+      navigator.userAgent.match(/iPhone/i) ||
+      navigator.userAgent.match(/iPad/i) ||
+      navigator.userAgent.match(/iPod/i) ||
+      navigator.userAgent.match(/BlackBerry/i) ||
+      navigator.userAgent.match(/Windows Phone/i)) {
+      a = true;
+    } else {
+      a = false;
+    }
+    if(a==true){
+      // window.alert("Not optimised for mobile devices yet, but hey good things take time and patience is key")
+      window.location.assign("mobileEntry.html")
+      // window.close()
+    }
+  </script>
+<body>
+    <p>Thnakyou for placing an order with Bellissimmo</p>
+    <h>Order ID : 89832</h>
+    <p>You can use the above order id to track your order</p>
+    <button onclick="reloadandclose()">CLICK</button>
+    <p>Note: Please click the above button for a secure redirection to the Bellissimmo homepage.</p>
+    <script>
+        function reloadandclose(){
+            localStorage.setItem("flag","1")
+        }
+        window.addEventListener("beforeunload", function (event) {
+            localStorage.setItem("flag","1")
+
+        })
+    </script>
+
+        
+</body>
+</html>

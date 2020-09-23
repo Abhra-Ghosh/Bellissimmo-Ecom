@@ -1,0 +1,26 @@
+{
+  "name": "colorlib-regform-3",
+  "version": "1.0.0",
+  "description": "sign up page",
+  "main": "express.js",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "mongodb": "^3.6.0",
+    "nightmare": "^3.0.2"
+  },
+  "scripts":{
+    "compile:sass": "node-sass static/cart.scss static/cart.css",
+    "start":"node express.js"
+  },
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  },
+ 
+  "author": "Abhra Ghosh",
+  "license": "MIT"
+}
